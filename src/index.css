@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@layer utilities {
+  input[type="password"]::-ms-reveal,
+  input[type="password"]::-ms-clear,
+  input[type="password"]::-webkit-credentials-auto-fill-button,
+  input[type="password"]::-webkit-password-reveal {
+    display: none;
+  }
+}
