@@ -64,21 +64,18 @@ const Signup = () => {
     }
   };
 
-  const onSubmit = (data) => {
-    bcrypt.genSalt(10, (err, salt) => {
-      bcrypt.hash(data.password, salt, async (err, hash) => {
-        try {
-          let response = await postData(data.username, hash);
-          console.log("Success:", response.message);
-          setRegistered(true);
-          setExists(false);
-        } catch (error) {
-          console.error("Error:", error.message);
-          setExists(true);
-          setRegistered(false);
-        }
-      });
-    });
+  const onSubmit = async (data) => {
+    const hash = bcrypt.hashSync(data.password, 10);
+    try {
+      let response = await postData(data.username, hash);
+      console.log("Success:", response.message);
+      setRegistered(true);
+      setExists(false);
+    } catch (error) {
+      console.error("Error:", error.message);
+      setExists(true);
+    }
+    setRegistered(false);
   };
 
   return (
