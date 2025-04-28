@@ -113,7 +113,7 @@ const Signup = () => {
             <div className="flex justify-between items-center relative">
               <input
                 {...register("password", { required: true })}
-                placeholder="Enter Passwird"
+                placeholder="Enter Password"
                 className="bg-white rounded-lg p-1"
                 type={isVisible ? "text" : "password"}
               />

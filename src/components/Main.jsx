@@ -32,6 +32,7 @@ const Main = () => {
     }
     let res = await fetch("https://pass-op-back-end.vercel.app/passwords", {
       method: "GET",
+      credentials: "include",
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -58,6 +59,7 @@ const Main = () => {
 
       let res = await fetch("https://pass-op-back-end.vercel.app/passwords", {
         method: "POST",
+        credentials: "include",
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -93,6 +95,7 @@ const Main = () => {
 
       const res = await fetch("https://pass-op-back-end.vercel.app/passwords", {
         method: "DELETE",
+        credentials: "include",
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
