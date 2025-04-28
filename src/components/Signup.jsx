@@ -42,7 +42,7 @@ const Signup = () => {
 
   const postData = async (username_, password_) => {
     try {
-      let res = await fetch("http://localhost:3000/users", {
+      let res = await fetch("https://pass-op-back-end.vercel.app/users", {
         method: "POST",
         body: JSON.stringify({
           username: username_,

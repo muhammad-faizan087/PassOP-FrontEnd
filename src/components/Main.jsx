@@ -30,7 +30,7 @@ const Main = () => {
       console.error("No token found, user not logged in.");
       return;
     }
-    let res = await fetch("http://localhost:3000/passwords", {
+    let res = await fetch("https://pass-op-back-end.vercel.app/passwords", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -56,7 +56,7 @@ const Main = () => {
     ) {
       const token = localStorage.getItem("token");
 
-      let res = await fetch("http://localhost:3000/passwords", {
+      let res = await fetch("https://pass-op-back-end.vercel.app/passwords", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -91,7 +91,7 @@ const Main = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:3000/passwords", {
+      const res = await fetch("https://pass-op-back-end.vercel.app/passwords", {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

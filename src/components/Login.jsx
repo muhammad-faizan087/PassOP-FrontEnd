@@ -43,7 +43,7 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      let res = await fetch("http://localhost:3000/login", {
+      let res = await fetch("https://pass-op-back-end.vercel.app/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
