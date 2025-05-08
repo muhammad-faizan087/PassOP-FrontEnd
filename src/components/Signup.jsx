@@ -68,14 +68,12 @@ const Signup = () => {
     const hash = bcrypt.hashSync(data.password, 10);
     try {
       let response = await postData(data.username, hash);
-      console.log("Success:", response.message);
       setRegistered(true);
       setExists(false);
     } catch (error) {
       console.error("Error:", error.message);
       setExists(true);
     }
-    setRegistered(false);
   };
 
   return (

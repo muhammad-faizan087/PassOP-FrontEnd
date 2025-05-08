@@ -58,7 +58,6 @@ const Login = () => {
       }
 
       let result = await res.json();
-      console.log("Login successful:", result);
 
       localStorage.setItem("token", result.token);
 

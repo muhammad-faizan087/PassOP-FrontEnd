@@ -40,7 +40,6 @@ const Main = () => {
     });
     let passwords = await res.json();
     if (passwords) {
-      console.log(passwords);
       setpasswordArray(passwords);
     }
   };
@@ -68,7 +67,6 @@ const Main = () => {
       });
 
       let newPassword = await res.json();
-      console.log(newPassword);
       setpasswordArray([...passwordArray, newPassword]);
       setform({ site: "", username: "", password: "" });
     } else {
@@ -86,8 +84,6 @@ const Main = () => {
   };
 
   const deletePassword = async (id) => {
-    console.log("Attempting to delete ID:", id);
-
     setpasswordArray(passwordArray.filter((item) => item._id !== id));
 
     try {
@@ -104,7 +100,6 @@ const Main = () => {
       });
 
       const data = await res.json();
-      console.log("Server Response:", data);
 
       if (res.status !== 200) {
         console.error("Failed to delete:", data);
@@ -124,7 +119,6 @@ const Main = () => {
 
   const editPassword = (id) => {
     const selectedItem = passwordArray.find((item) => item._id === id);
-    console.log("Editing password:", selectedItem);
 
     if (!selectedItem) {
       console.error("Error: Selected password is undefined.");
