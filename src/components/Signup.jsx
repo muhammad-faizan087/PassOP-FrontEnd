@@ -73,6 +73,7 @@ const Signup = () => {
     } catch (error) {
       console.error("Error:", error.message);
       setExists(true);
+      setRegistered(false);
     }
   };
 
