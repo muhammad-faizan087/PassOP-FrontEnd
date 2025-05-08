@@ -94,7 +94,7 @@ const Login = () => {
             <input
               {...register("username", { required: true })}
               placeholder="Enter Username"
-              className="bg-white rounded-lg p-1"
+              className="bg-white rounded-full px-2 py-1"
             />
             {errors.username && (
               <span className="text-red-600">Username can't be empty</span>
@@ -103,7 +103,7 @@ const Login = () => {
               <input
                 {...register("password", { required: true })}
                 placeholder="Enter Password"
-                className="bg-white rounded-lg p-1"
+                className="bg-white rounded-full px-2 py-1"
                 type={isVisible ? "text" : "password"}
               />
               <img
@@ -120,7 +120,7 @@ const Login = () => {
             <button
               type="button"
               onClick={handleSubmit(onSubmit)}
-              className="text-white mt-2 bg-green-500 py-1 px-3 rounded-lg cursor-pointer"
+              className="text-white font-semibold mt-2 bg-green-500 py-1 px-4 rounded-full cursor-pointer"
             >
               Login
             </button>
